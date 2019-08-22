@@ -1,0 +1,13 @@
+persons = ['Vasya', 'Kolya', 'Petya', 'RomanA']
+salary = [100, 120, 170, 1500500]
+salary_list = dict(zip(persons,salary))
+
+file = open('salary.txt', 'w', encoding='utf-8')
+for persons, salary in salary_list.items():
+    #if salary >= 500000:
+    #    incognito =  persons.pop(salary_list) #способ корявый, но почему-то работает...
+    salary_table = ('{0} - {1}\n'.format(persons.upper(), (salary - (salary/100 * 13))))
+    file.write(salary_table)
+file.seek(0)
+print(file.readlines)
+file.close()
