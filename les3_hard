@@ -1,0 +1,14 @@
+from random import randint
+player = {'name': input('Введите ваше имя: '), 'health': 100, 'damage': randint(0, 25)} 
+enemy = {'name': input('Введите имя противника: '), 'health': 100, 'damage': randint(0, 25)} 
+
+def attack(player, enemy):
+    enemy['health'] = enemy['health'] - player['damage']
+    if enemy['health'] <= 0:
+       print("Силы противника иссякли. Вы победили.")
+    player['health'] = player['health'] - enemy['damage']
+    if player['health'] <= 0:
+       print("Ваши силы иссякли. Вы проиграли.")
+
+attack(player, enemy)
+print(player, enemy, sep='\n')
