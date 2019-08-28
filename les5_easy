@@ -20,8 +20,12 @@ for dir in old_dir:
 
 
 #task_2
-point = os.getcwd()
-print([x[1] for x in os.walk(point)])
+point = os.listdir ()
+dir_list = []
+for i in point:
+    if os.path.isdir (i):
+        dir_list.append (i)
+print (dir_list)
 
 #task_3
 from shutil import copyfile
