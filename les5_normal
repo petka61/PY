@@ -1,0 +1,36 @@
+import easy
+import os
+
+print('''Доступны следующие команды:
+1. Перейти в папку
+2. Просмотреть содержимое папки
+3. Удалить папку
+4. Создать папку''')
+
+user_input = int(input('выберите действие: '))
+
+if user_input == 1: #переход в другую директорию
+    goto_folder = input('Укажите название папки: ')
+    try:
+        easy.moveto(goto_folder)
+    except FileNotFoundError:
+        print ('Невозможно перейти')
+
+elif user_input == 2: #просмотр содержимого
+    easy.around()
+
+elif user_input == 3: #удаление папки
+    rem_folder = input ('Укажите название папки: ')
+    try:
+        easy.rem_dir(rem_folder)
+    except FileNotFoundError:
+        print ('Невозможно удалить')
+
+elif user_input == 4: #создать папку
+    create_dir = input ('Укажите название папки: ')
+    try:
+        easy.new_dir(create_dir)
+    except OSError:
+        print ('Невозможно создать')
+else:
+    print('Ошибка ввода.')
