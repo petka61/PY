@@ -1,0 +1,45 @@
+# Задача - 1
+# Опишите несколько классов TownCar, SportCar, WorkCar, PoliceCar
+# У каждого класса должны быть следующие аттрибуты:
+# speed, color, name, is_police - Булево значение.
+# А так же несколько методов: go, stop, turn(direction) - которые должны сообщать,
+#  о том что машина поехала, остановилась, повернула(куда)
+
+class TownCar:
+    def __init__(self, name, speed, color, is_police):
+        self.name = name
+        self.speed = speed
+        self.color = color
+        self.is_police = is_police
+
+    def go(self):
+            print("Машина поехала")
+    def stop(self):
+            print('Машина остановилась')
+    def turn(self):
+            print('Машина повернула ')
+
+towncar = TownCar{'name': 'toyota', 'speed': '40', 'color': "'blue', 'is_police': False}
+towncar2 = TownCar('mazda', '55mph', 'yellow', False)
+
+towncar.speed()
+
+class SportCar(TownCar):
+    pass
+
+sportcar = SportCar('Marussya', '240', 'red-blue', False)
+
+sportcar.name('Marussya', '240', 'red-blue', False)
+
+class WorkCar(TownCar):
+    pass
+
+workcar = WorkCar('ZIL', '55', 'green', False)
+
+class PoliceCar(TownCar):
+
+    def __init__(self, is_police):
+        super().__init_ (is_police)
+        is_police = True
+
+policecar = PoliceCar('robocop', '90', 'blue-white', True)
