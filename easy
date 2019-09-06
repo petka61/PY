@@ -1,0 +1,26 @@
+
+import os
+
+def new_dir(create_dir):
+    os.mkdir(create_dir)
+    result = print ("Успешно создана")
+    return result
+
+def rem_dir(rem_folder):
+    os.rmdir(rem_folder)
+    result = print ("Успешно удалена")
+    return result
+
+def around():
+    point = os.listdir()
+    dir_list = []
+    for i in point:
+        if os.path.isdir (i):
+            dir_list.append (i)
+    result = print(dir_list)
+    return result
+
+def moveto(goto_folder):
+    os.chdir(goto_folder)
+    result = print("Успешно перешел")
+    return result
