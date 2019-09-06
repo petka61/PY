@@ -1,0 +1,46 @@
+
+import random
+class Game:
+    def __init__(self, player, computer):
+        self._player = player
+        self._computer = computer
+        self.box = random.sample(range(1, 91), 90)
+
+    def choice(self):
+        return self.box.pop()
+
+    def start(self):
+        for x in range(90):
+            print(self._player, self._computer)
+            number = self.choice()
+            user_input = input('зачеркиваем? y/n:\n')
+            if user_input == 'y':
+                ...
+                    break
+            elif self._player.chance(number):
+                print('lose')
+                break
+            if self._computer.chance(number):
+                self._computer.cross(number)
+
+class Card:
+    def __init__(self, player_type):
+        self.player_type = player_type
+        self._card = [[],
+                      [],
+                      []]
+
+
+    def chance(self, number):
+        for line in self._card:
+            if number in line:
+                return True
+        return False
+
+
+
+human_player = Card('Игрок')
+computer_player = Card('Компьютер')
+
+game = Game(human_player, computer_player)
+game.start()
